@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: hospital
+
+resources:
+  - namespace_hospital.yaml
+  - hostpath-pv.yaml
+  - persistent-volume-claim.yaml
+  - mysql-sealed-secret.yaml
+  - mysql-deployment.yaml
+  - hospital-deployment.yaml
+  - mysql_service.yaml
+  - hospital_service.yaml
+  - ingress_hospital.yaml

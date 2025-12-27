@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hospital-ingress
+  namespace: hospital
+  annotations:
+    nginx.ingress.kubernetes.io/server-alias: "hospital.k8s-16.sa"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: hospital.k8s-15.sa
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: hospital
+                port:
+                  number: 8080
