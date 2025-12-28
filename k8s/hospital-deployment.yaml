@@ -16,7 +16,7 @@ spec:
       terminationGracePeriodSeconds: 60
       containers:
       - name: hospital-app
-        image: jfrog.it-academy.by/public/hospital/app:19
+        image: jfrog.it-academy.by/public/hospital/app:20
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
