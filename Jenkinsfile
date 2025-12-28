@@ -28,7 +28,6 @@ pipeline {
             passwordVariable: 'GIT_PASS'
           )]) {
             sh """
-              # Настраиваем git
               sed -i 's|image:.*jfrog.it-academy.by/public/hospital/app.*|image: ${params.IMAGE_TAG}|' k8s/hospital-deployment.yaml
               git add k8s/hospital-deployment.yaml
               git commit -m "Update image to ${params.IMAGE_TAG}"
